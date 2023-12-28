@@ -13,7 +13,7 @@ public class TelaProdutos extends JFrame {
         // Configuração básica da janela
         setTitle("GELAFIT");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(370, 400);
+        setSize(370, 450); // Aumentei a altura para acomodar o botão "Casa"
         setLocationRelativeTo(null);
 
         JPanel mainPanel = new JPanel(new BorderLayout()); // Adiciona um painel principal 
@@ -45,20 +45,30 @@ public class TelaProdutos extends JFrame {
         // Adicione a lógica para o botão "Ver Clientes" aqui, por exemplo, abrir uma nova tela
         buttonPanel.add(viewClientsButton);
 
+        // Adiciona o botão "Relatório"
+        JButton reportButton = createButton("Relatório", "C:\\Users\\sakia\\OneDrive\\Área de Trabalho\\tela adicionar produto\\projeto\\assests\\relatorio.png", 30, 30);
+        // Adicione a lógica para o botão "Relatório" aqui, por exemplo, gerar um relatório
+        buttonPanel.add(reportButton);
+
+        // Adiciona o botão "Suporte"
+        JButton supportButton = createButton("Suporte", "C:\\Users\\sakia\\OneDrive\\Área de Trabalho\\tela adicionar produto\\projeto\\assests\\suporte.png", 30, 30);
+        // Adicione a lógica para o botão "Suporte" aqui, por exemplo, abrir uma tela de suporte
+        buttonPanel.add(supportButton);
+
         mainPanel.add(buttonPanel, BorderLayout.CENTER); // Adiciona o painel de botões ao painel principal no Centro
 
         // Adiciona um novo painel no centro para os botões abaixo dos dois primeiros
         JPanel secondRowPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
-        // Adiciona o botão "Relatório"
-        JButton reportButton = createButton("Relatório", "C:\\Users\\sakia\\OneDrive\\Área de Trabalho\\tela adicionar produto\\projeto\\assests\\relatorio.png", 30, 30);
-        // Adicione a lógica para o botão "Relatório" aqui, por exemplo, gerar um relatório
-        secondRowPanel.add(reportButton);
-
-        // Adiciona o botão "Suporte"
-        JButton supportButton = createButton("Suporte", "C:\\Users\\sakia\\OneDrive\\Área de Trabalho\\tela adicionar produto\\projeto\\assests\\suporte.png", 30, 30);
-        // Adicione a lógica para o botão "Suporte" aqui, por exemplo, abrir uma tela de suporte
-        secondRowPanel.add(supportButton);
+        // Adiciona o botão "Casa" com uma imagem como ícone
+        JButton homeButton = createButton("", "C:\\Users\\sakia\\OneDrive\\Área de Trabalho\\tela adicionar produto\\projeto\\assests\\casa.png", 50, 50);
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Adicione a lógica para o botão "Casa" aqui, por exemplo, voltar à tela principal
+            }
+        });
+        secondRowPanel.add(homeButton);
 
         mainPanel.add(secondRowPanel, BorderLayout.SOUTH); // Adiciona o segundo painel de botões abaixo do primeiro no Centro
 
